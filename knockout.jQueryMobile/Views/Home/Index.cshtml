@@ -1,31 +1,98 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<p>Sample text and <a href="#">links</a>.</p>
+<fieldset class="ui-grid-a">
+    <div class="ui-block-a"><button data-icon="flat-settings" data-theme="a">Button A</button></div>
+    <div class="ui-block-b"><button data-icon="flat-new" data-theme="b">Button B</button></div>
+</fieldset>
+<fieldset class="ui-grid-a">
+    <div class="ui-block-a"><button data-icon="flat-man" data-theme="c">Button C</button></div>
+    <div class="ui-block-b"><button data-icon="flat-mail" data-theme="d">Button D</button></div>
+</fieldset>
+<fieldset class="ui-grid-a">
+    <div class="ui-block-a"><button data-icon="flat-lock" data-theme="e">Button E</button></div>
+    <div class="ui-block-b"><button data-icon="flat-menu" data-theme="f">Button F</button></div>
+</fieldset>
+<fieldset class="ui-grid-a">
+    <div class="ui-block-a"><button data-icon="flat-heart" data-theme="g">Button G</button></div>
+</fieldset>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider" data-theme="a">List Header</li>
+    <li>Read-only list item</li>
+    <li><a href="#">Linked list item</a></li>
+</ul>
+
+<div data-role="collapsible-set" data-theme="b" data-content-theme="b">
+    <div data-role="collapsible" data-collapsed-icon="flat-time" data-expanded-icon="flat-cross" data-collapsed="false">
+        <h3>Section 1</h3>
+        <p>I'm the collapsible content for section 1</p>
+    </div>
+    <div data-role="collapsible" data-collapsed-icon="flat-calendar" data-expanded-icon="flat-cross">
+        <h3>Section 2</h3>
+        <p>I'm the collapsible content for section 2</p>
+    </div>
+    <div data-role="collapsible" data-collapsed-icon="flat-settings" data-expanded-icon="flat-cross">
+        <h3>Section 3</h3>
+        <p>I'm the collapsible content for section 3</p>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div data-role="fieldcontain">
+    <fieldset data-role="controlgroup">
+        <input type="radio" name="radio-choice-a" data-theme="c" id="radio-choice-1-a" value="choice-1" checked="checked" />
+        <label for="radio-choice-1-a">Radio</label>
+
+        <input type="checkbox" name="checkbox-a" data-theme="c" id="checkbox-a" checked="checked" />
+        <label for="checkbox-a">Checkbox</label>
+    </fieldset>
+</div>
+
+<div data-role="fieldcontain">
+    <a href="#" data-role="button" data-icon="home" data-iconpos="notext" data-theme="b" data-inline="true">Home</a>
+    <a href="#" data-role="button" data-icon="flat-video" data-iconpos="notext" data-theme="b" data-inline="true">Video</a>
+    <a href="#" data-role="button" data-icon="flat-time" data-iconpos="notext" data-theme="b" data-inline="true">Time</a>
+    <a href="#" data-role="button" data-icon="flat-settings" data-iconpos="notext" data-theme="b" data-inline="true">Settings</a>
+    <a href="#" data-role="button" data-icon="flat-plus" data-iconpos="notext" data-theme="b" data-inline="true">Plus</a>
+    <a href="#" data-role="button" data-icon="flat-new" data-iconpos="notext" data-theme="b" data-inline="true">New</a>
+    <a href="#" data-role="button" data-icon="flat-menu" data-iconpos="notext" data-theme="b" data-inline="true">Menu</a>
+    <a href="#" data-role="button" data-icon="flat-man" data-iconpos="notext" data-theme="b" data-inline="true">Man</a>
+    <a href="#" data-role="button" data-icon="flat-mail" data-iconpos="notext" data-theme="b" data-inline="true">Mail</a>
+    <a href="#" data-role="button" data-icon="flat-lock" data-iconpos="notext" data-theme="b" data-inline="true">Lock</a>
+    <a href="#" data-role="button" data-icon="flat-location" data-iconpos="notext" data-theme="b" data-inline="true">Location</a>
+    <a href="#" data-role="button" data-icon="flat-heart" data-iconpos="notext" data-theme="b" data-inline="true">Heart</a>
+    <a href="#" data-role="button" data-icon="flat-eye" data-iconpos="notext" data-theme="b" data-inline="true">Eye</a>
+    <a href="#" data-role="button" data-icon="flat-cross" data-iconpos="notext" data-theme="b" data-inline="true">Cross</a>
+    <a href="#" data-role="button" data-icon="flat-cmd" data-iconpos="notext" data-theme="b" data-inline="true">Cmd</a>
+    <a href="#" data-role="button" data-icon="flat-checkround" data-iconpos="notext" data-theme="b" data-inline="true">Checkround</a>
+    <a href="#" data-role="button" data-icon="flat-calendar" data-iconpos="notext" data-theme="b" data-inline="true">Calendar</a>
+    <a href="#" data-role="button" data-icon="flat-bubble" data-iconpos="notext" data-theme="b" data-inline="true">Bubble</a>
+    <a href="#" data-role="button" data-icon="flat-volume" data-iconpos="notext" data-theme="b" data-inline="true">Volume</a>
+    <a href="#" data-role="button" data-icon="flat-camera" data-iconpos="notext" data-theme="b" data-inline="true">Camera</a>
+</div>
+
+<select name="flip-1" id="flip-1" data-theme="b" data-role="slider">
+    <option value="off">Off</option>
+    <option value="on" selected>On</option>
+</select>
+
+<div data-role="fieldcontain">
+    <div data-role="controlgroup" data-type="horizontal">
+        <a href="#" data-icon="flat-mail" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+        <a href="#" data-icon="flat-camera" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+        <a href="#" data-icon="flat-heart" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+        <a href="#" data-icon="flat-eye" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+</div>
+
+<div data-role="fieldcontain">
+    <select name="select-choice" id="select-choice-a" data-native-menu="false" data-theme="a">
+        <option value="standard">Option 1</option>
+        <option value="rush">Option 2</option>
+        <option value="express">Option 3</option>
+        <option value="overnight">Option 4</option>
+    </select>
+</div>
+
+<input type="text" placeholder="Text Input" />
+<div data-role="fieldcontain">
+    <input type="range" name="slider" value="50" min="0" max="100" data-highlight="true" />
 </div>

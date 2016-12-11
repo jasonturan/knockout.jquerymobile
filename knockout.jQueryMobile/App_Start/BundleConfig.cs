@@ -14,9 +14,13 @@ namespace knockout.jQueryMobile
             bundles.Add(new ScriptBundle("~/bundles/jqueryMobile").Include(
                         "~/Scripts/jQueryMobile/jquery.mobile-1.4.5.js"));
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
-                        "~/Scripts/knockout-3.4.0.debug.js"));
+                        "~/Scripts/knockout-3.4.0.debug.js",
+                        "~/Scripts/knockout.mapping-latest.debug.js",
+                        "~/Scripts/knockout.bindingHandlers.jqm/knockout.bindingHandlers.jqm.js"));
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));  
+                        "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/underscore").Include(
+                       "~/Scripts/underscore.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 

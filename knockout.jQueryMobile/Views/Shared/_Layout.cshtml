@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div data-role="page">
+    <div data-enhance="false" data-role="page">
 
         <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
             <ul data-role="listview">
@@ -31,11 +31,19 @@
         <div data-role="content" role="main">
            @RenderBody()
         </div>
-    </div>
-     
+    </div>    
+
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/underscore")
+    <script type="text/javascript">
+        $(document).bind("mobileinit", function () {
+            $.mobile.ignoreContentEnabled = true;
+        });
+    </script>    
     @Scripts.Render("~/bundles/jqueryMobile")
+   
     @Scripts.Render("~/bundles/knockout")
+
     @RenderSection("scripts", required: false)
 </body>
 

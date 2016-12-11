@@ -1,2 +1,77 @@
 ﻿
+<div id="buttonBindings">
+    <input type="button" data-bind="jqmButton:{click:function() {$data.disable(!$data.disable());}}" value="Toggle disabled" />
+    <h1>Input controls</h1>
+    <div data-bind="foreach: buttonViewModels">
+        <input type="button" data-bind="jqmButton:{value: buttonText, click: $parent.buttonClicked, disable:$parent.disable}, jqmDataAttributes:{'icon': currentIcon, 'theme': currentTheme, 'corners': hasCorners, 'iconpos': iconpos, 'iconshadow':iconshadow }">
+    </div>
+
+    @*<h1>Anchor tags</h1>
+    <div data-bind="foreach: buttonViewModels">
+        <a data-bind="jqmButton:{value: buttonText, click: $parent.buttonClicked}, jqmDataAttributes:{'icon': currentIcon, 'theme': currentTheme, 'corners': hasCorners, 'iconpos': iconpos, 'iconshadow':iconshadow }">
+    </div>
+
+    <h1>Div tags</h1>
+    <div data-bind="foreach: buttonViewModels">
+        <div data-bind="jqmButton:{value: buttonText, click: $parent.buttonClicked}, jqmDataAttributes:{'icon': currentIcon, 'theme': currentTheme, 'corners': hasCorners, 'iconpos': iconpos, 'iconshadow':iconshadow }">
+    </div>*@
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ButtonViewmodel = function () {
+                var self = this;
+                self.disable = ko.observable(false);
+                self.constructButtonViewModel = function (startingTheme, startingIcon) {
+                    var buttonVm = {
+                        startingIcon: ko.observable(startingIcon),
+                        currentIcon: ko.observable(startingIcon),
+                        startingTheme: ko.observable(startingTheme),
+                        currentTheme: ko.observable(startingTheme),
+                        buttonText: ko.observable('Theme ' + startingTheme),
+                        hasCorners: ko.observable(false),
+                        iconpos: ko.observable('left'),
+                        iconshadow: ko.observable(true)
+                    };
+                    return buttonVm;
+                }
+                             
+                self.buttonViewModels = ko.observableArray([
+                    self.constructButtonViewModel('a', 'info'),
+                    self.constructButtonViewModel('b', 'delete'),
+                        self.constructButtonViewModel('c', 'alert'),
+                        self.constructButtonViewModel('d', 'action')]);
+
+                self.selectedThemeValue = ko.observable('a');
+                self.buttonClicked = function (clickedButton) {
+                    clickedButton.hasCorners(!clickedButton.hasCorners());
+                    clickedButton.iconshadow(!clickedButton.iconshadow());
+                    var iconPoses = [
+                        'left',
+                        'right',
+                        'top',
+                        'bottom',
+                        'notext'
+                    ];
+                    var currentIconPos = _.indexOf(iconPoses, clickedButton.iconpos());
+                    var newPos = currentIconPos >= iconPoses.length-1 ? iconPoses[0] : iconPoses[currentIconPos + 1];
+                    
+                    clickedButton.iconpos(newPos);
+
+                    _.forEach(self.buttonViewModels(), function (btn) {
+                        btn.currentTheme(clickedButton.startingTheme());
+                        btn.currentIcon(clickedButton.startingIcon());
+                        btn.buttonText('Theme ' + clickedButton.startingTheme());
+                    });                    
+                }
+            }
+
+            var vm = new ButtonViewmodel(); 
+            ko.applyBindings(vm, $('#buttonBindings')[0]);
+        });
+    </script>
+}
+
+
 
